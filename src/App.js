@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
@@ -7,19 +7,26 @@ import { EarnMoney } from "./pages/EarnMoney";
 import { Goals } from "./pages/Goals";
 import { Progress } from "./pages/Progress";
 import { Page4 } from "./pages/page4";
+import { useSearchResults } from "./hooks/useSearchResults";
 
+function siplifySampleData(allSearchResult){
+  return allSearchResult;
+}
 
 function App() {
-  
-  //fetching the sample data
-  fetch('/Sample-Api.json')
-  .then(response => response.json())
-  .then(data => console.log(data));
 
+  const [searchResults, setSearchResults] = useState([]);
+
+    useEffect(async () => {
+      const response = await fetch('/Sample-Api.json').then(response => response.json());
+      setSearchResults (siplifySampleData(response));
+    }, [])
+  
   return (
     <div className="App">
       <Router>
         <div>
+          <span>{JSON.stringify(searchResults)}</span>
           <nav>
             <ul>
               <li>
