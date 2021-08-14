@@ -7,7 +7,14 @@ import { Goals } from "./pages/Goals";
 import { Progress } from "./pages/Progress";
 import { Page4 } from "./pages/page4";
 
+
 function App() {
+  
+  //fetching the sample data
+  fetch('/Sample-Api.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
   return (
     <div className="App">
       <Router>
