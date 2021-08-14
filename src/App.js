@@ -6,8 +6,6 @@ import { Home } from "./pages/Home";
 import { EarnMoney } from "./pages/EarnMoney";
 import { Goals } from "./pages/Goals";
 import { Progress } from "./pages/Progress";
-import { Page4 } from "./pages/page4";
-import { useSearchResults } from "./hooks/useSearchResults";
 
 function siplifySampleData(allSearchResult){
   return allSearchResult.List.map(function (allData) {
@@ -46,9 +44,6 @@ function App() {
               <li>
                 <Link to="/progress">Progress</Link>
               </li>
-              <li>
-                <Link to="/page4">Page4</Link>
-              </li>
             </ul>
           </nav>
           <Switch>
@@ -63,9 +58,6 @@ function App() {
             </Route>
             <Route path="/progress">
               <Progress />
-            </Route>
-            <Route path="/page4">
-              <Page4 />
             </Route>
           </Switch>
         </div>
