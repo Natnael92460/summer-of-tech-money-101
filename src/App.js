@@ -12,7 +12,7 @@ function siplifySampleData(allSearchResult){
     return {listId    : allData.ListingId, 
             listTitle : allData.Title, 
             listPrice : allData.BuyNowPrice,
-            listPic   : allData.PictureHref};
+            listPic   : allData.PictureHref };
   })
 }
 
@@ -22,6 +22,7 @@ function App() {
 
     useEffect(async () => {
       const response = await fetch('/Sample-Api.json').then(response => response.json());
+      
       setSearchResults (siplifySampleData(response));
     }, [])
   
@@ -29,6 +30,15 @@ function App() {
     <div className="App">
       <Router>
         <div>
+
+        {searchResults.map((searchResult) => 
+        (<div> 
+          <img src={searchResult.listPic}/>
+         <p> {searchResult.listTitle}</p>
+         <p>
+          ${searchResult.listPrice}</p>
+          </div>))}
+
           <nav>
             <ul>
               <li>
