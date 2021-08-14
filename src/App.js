@@ -29,7 +29,6 @@ function App() {
     <div className="App">
       <Router>
         <div>
-          <span>{JSON.stringify(searchResults)}</span>
           <nav>
             <ul>
               <li>
