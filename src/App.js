@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import { Home } from "./pages/Home";
+import { EarnMoney } from "./pages/EarnMoney";
 import { Goals } from "./pages/Goals";
 import { Progress } from "./pages/Progress";
 import { Page4 } from "./pages/page4";
@@ -25,6 +26,9 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
+                <Link to="/EarnMoney">Earn Money</Link>
+              </li>
+              <li>
                 <Link to="/goals">Goals</Link>
               </li>
               <li>
@@ -39,7 +43,9 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-
+            <Route path="/EarnMoney">
+              <EarnMoney />
+            </Route>
             <Route path="/goals">
               <Goals />
             </Route>
