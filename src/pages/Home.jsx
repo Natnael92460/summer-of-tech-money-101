@@ -26,6 +26,8 @@ return (
   templateColumns="repeat(2, 1fr)"
   gap={4}
 >
+  <GridItem bg="tomato" />
+  
   <GridItem rowSpan={2} bg="papayawhip" >
   {searchResults.map((searchResult) => 
       (<div> 
@@ -35,8 +37,8 @@ return (
         ${searchResult.listPrice}</p>
         </div>))}
   </GridItem>
-  <GridItem bg="tomato" />
-  <GridItem bg="yellow" />
+  <GridItem bg="yellow" />  
+  
   
 </Grid>
 );
