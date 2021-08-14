@@ -1,4 +1,4 @@
-import { SearchBar } from "../components/searchbar";
+// import { SearchBar } from "../components/searchbar";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export const Goals = () => {
   const testArray = [
@@ -16,7 +16,7 @@ export const Goals = () => {
     <div>
       <h1>Set Goals</h1>
 
-      <SearchBar />
+      {/* <SearchBar /> */}
       {testArray.map((item, index) => {
         return (
           <div>
