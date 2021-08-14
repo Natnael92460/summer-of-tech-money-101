@@ -27,51 +27,53 @@ function App() {
     }, [])
   
   return (
-    <div className="App">
-      <Router>
-        <div>
+    // <div className="App">
+    //   <Router>
+    //     <div>
 
-        {searchResults.map((searchResult) => 
-        (<div> 
-          <img src={searchResult.listPic}/>
-         <p> {searchResult.listTitle}</p>
-         <p>
-          ${searchResult.listPrice}</p>
-          </div>))}
 
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/EarnMoney">Earn Money</Link>
-              </li>
-              <li>
-                <Link to="/goals">Goals</Link>
-              </li>
-              <li>
-                <Link to="/progress">Progress</Link>
-              </li>
-            </ul>
-          </nav>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/EarnMoney">
-              <EarnMoney />
-            </Route>
-            <Route path="/goals">
-              <Goals />
-            </Route>
-            <Route path="/progress">
-              <Progress />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </div>
+    //       <nav>
+    //         <ul>
+    //           <li>
+    //             <Link to="/">Home</Link>
+    //           </li>
+    //           <li>
+    //             <Link to="/EarnMoney">Earn Money</Link>
+    //           </li>
+    //           <li>
+    //             <Link to="/goals">Goals</Link>
+    //           </li>
+    //           <li>
+    //             <Link to="/progress">Progress</Link>
+    //           </li>
+    //         </ul>
+    //       </nav>
+    //       <Switch>
+    //         <Route exact path="/">
+    //           <Home />
+    //         </Route>
+    //         <Route path="/EarnMoney">
+    //           <EarnMoney />
+    //         </Route>
+    //         <Route path="/goals">
+    //           <Goals />
+    //         </Route>
+    //         <Route path="/progress">
+    //           <Progress />
+    //         </Route>
+    //       </Switch>
+    //     </div>
+    //   </Router>
+    //   {searchResults.map((searchResult) => 
+    //   (<div> 
+    //     <img src={searchResult.listPic}/>
+    //    <p> {searchResult.listTitle}</p>
+    //    <p>
+    //     ${searchResult.listPrice}</p>
+    //     </div>))}
+    // </div>
+    <Home>
+    </Home>
   );
 }
 
