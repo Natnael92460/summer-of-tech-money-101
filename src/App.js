@@ -10,7 +10,12 @@ import { Page4 } from "./pages/page4";
 import { useSearchResults } from "./hooks/useSearchResults";
 
 function siplifySampleData(allSearchResult){
-  return allSearchResult;
+  return allSearchResult.List.map(function (allData) {
+    return {listId    : allData.ListingId, 
+            listTitle : allData.Title, 
+            listPrice : allData.BuyNowPrice,
+            listPic   : allData.PictureHref};
+  })
 }
 
 function App() {
