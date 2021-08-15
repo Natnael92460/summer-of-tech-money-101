@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   Box,
   HStack,
-  Badge,
+  Badge, Center,
   Image,
   StarIcon,
   Grid,
@@ -77,7 +77,24 @@ export const Home = () => {
       </GridItem> 
 
       <GridItem bg="white">
-     
+        <h1 style={{textAlign:"center"}}>My Progress</h1>
+      <Grid
+      h="100vh"
+      templateRows="repeat(2, 1fr)"
+      templateColumns="repeat(2, 1fr)"
+      gap={4}
+    >
+      <GridItem >
+        <img src="/Img/starChart.png" style={{width:"100%"}}/>
+      </GridItem>
+      <GridItem >
+        <Box h="100%" bg="grey">
+        <Center h="100%">
+        <h2 style={{color:"white"}}>$28 /$100</h2>
+        </Center>
+        </Box>
+      </GridItem>
+      </Grid>
       </GridItem>   
     </Grid>
   );
