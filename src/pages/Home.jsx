@@ -42,13 +42,18 @@ export const Home = () => {
     setSearchResults(siplifySampleData(response));
   }, []);
   return (
+    <div>
+    <Box w="100%" p={4} color="#60BB77">
+      <img style={{width:'50px', height:'50px' }} src="/Img/logo.png"/>
+      <span style={{fontSize:"180%", marginLeft:"30px"}}>Money101</span>
+    </Box>
     <Grid
-      h="100vh"
+      h="60vh"
       templateRows="repeat(2, 1fr)"
       templateColumns="repeat(2, 1fr)"
       gap={4}
     >
-      <GridItem style={{marginLeft:"30px" , marginTop:"80px", marginDown:"40px"}} bg="white">
+      <GridItem style={{marginLeft:"30px" , marginDown:"40px"}} bg="white">
       <Grid templateColumns="repeat(3, 1fr)">
         {chores.map((chore) => (
           <GridItem>
@@ -64,7 +69,7 @@ export const Home = () => {
         
 
 
-      <GridItem rowSpan={2} style={{ overflow: "scroll" , marginLeft:"20px",marginTop:"80px", marginDown:"40px" }} bg="white">
+      <GridItem rowSpan={2} style={{ overflow: "scroll" , marginLeft:"20px",marginDown:"40px" }} bg="white">
         <Grid templateColumns="repeat(2, 1fr)">
           {searchResults.map((searchResult) => (
             <GridItem >
@@ -79,7 +84,7 @@ export const Home = () => {
       <GridItem bg="white">
         <h1 style={{textAlign:"center"}}>My Progress</h1>
       <Grid
-      h="100vh"
+      h="60vh"
       templateRows="repeat(2, 1fr)"
       templateColumns="repeat(2, 1fr)"
       gap={4}
@@ -97,5 +102,6 @@ export const Home = () => {
       </Grid>
       </GridItem>   
     </Grid>
+    </div>
   );
 };
