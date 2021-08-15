@@ -70,11 +70,11 @@ export const Home = () => {
         
 
 
-      <GridItem rowSpan={2} style={{ overflow: "scroll" , marginLeft:"20px",paddingLeft:"50px",marginDown:"40px",borderLeft:"1px solid"}} bg="white">
+      <GridItem rowSpan={2} style={{ overflow: "scroll" ,paddingLeft:"50px",marginDown:"40px",borderLeft:"1px solid"}} bg="white">
       <h1 style={{textAlign:"center",color:"#60BB77"}}>Choose a Savings Goal</h1>
         <Grid templateColumns="repeat(2, 1fr)">
           {searchResults.map((searchResult) => (
-            <GridItem >
+            <GridItem style={{border:"3px solid", padding:"20px",margin:"20px",borderColor:"#60BB77"}} >
               <img src={searchResult.listPic} />
               <p style={{paddingRight:"50px"}}> {searchResult.listTitle}</p>
               <p style={{paddingRight:"50px"}}>${searchResult.listPrice}</p>
