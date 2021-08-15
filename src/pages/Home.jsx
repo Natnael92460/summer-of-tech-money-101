@@ -8,6 +8,8 @@ import {
   Grid,
   GridItem,
   grid,
+  Flex,
+  Heading,
 } from "@chakra-ui/react";
 import { AirbnbExample } from "../components/AirbnbExample";
 
@@ -43,10 +45,10 @@ export const Home = () => {
   }, []);
   return (
     <div>
-    <Box w="100%" p={4} color="#60BB77">
+    <Flex align="center" w="100%" p={4} color="#60BB77">
       <img style={{width:'50px', height:'50px' }} src="/Img/logo.png"/>
       <span style={{fontSize:"180%", marginLeft:"30px"}}>Money101</span>
-    </Box>
+    </Flex>
     <Grid
       h="60vh"
       templateRows="repeat(2, 1fr)"
@@ -54,14 +56,16 @@ export const Home = () => {
       gap={4}
     >
       <GridItem style={{marginLeft:"30px" , marginDown:"40px",paddingDown:"40px",borderBottom:"1px solid"}} bg="white">
-      <h1 style={{textAlign:"center",color:"#60BB77"}}>Ways to earn</h1>
-      <Grid templateColumns="repeat(3, 1fr)">
+      <Heading style={{textAlign:"center",color:"#60BB77", marginBottom: '24px'}}>Ways to earn</Heading>
+      <Grid templateColumns="repeat(3, 1fr)" gap={6} mb="24px">
         {chores.map((chore) => (
-          <GridItem>
+          <GridItem boxShadow="base" borderRadius="6px" placeItems="center" transition="all 200ms ease-in-out" _hover={{ boxShadow: 'xl'}}>
 
-          <img src={chore.img} style={{width:'100px', height:'100px' }}  />
-          <p>{chore.name}</p>
-          <p>{chore.money}</p>
+          <img src={chore.img} style={{ margin: 'auto', borderTopLeftRadius: '6px', borderTopRightRadius: '6px' }}   />
+          <Box p={2}>
+            <p>{chore.name}</p>
+            <p>${chore.money}</p>
+          </Box>
             
           </GridItem>
         ))}
@@ -78,7 +82,7 @@ export const Home = () => {
             
             <GridItem style={{border:"3px solid", padding:"20px",margin:"20px",borderColor:"#60BB77", alignSelf:"center"}} >
               <Center>
-              <img src={searchResult.listPic} style={{width:'100px', height:'100px' }}/>
+              <img src={searchResult.listPic} style={{width:'150px', height:'150px' }}/>
               </Center>
               <p style={{paddingRight:"50px"}}> {searchResult.listTitle}</p>
               <p style={{paddingRight:"50px"}}>${searchResult.listPrice}</p>

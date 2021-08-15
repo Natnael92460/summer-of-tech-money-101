@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
@@ -72,8 +73,10 @@ function App() {
     //     ${searchResult.listPrice}</p>
     //     </div>))}
     // </div>
+    <ChakraProvider>
     <Home>
     </Home>
+    </ChakraProvider>
   );
 }
 
