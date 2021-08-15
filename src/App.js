@@ -12,7 +12,7 @@ function siplifySampleData(allSearchResult){
     return {listId    : allData.ListingId, 
             listTitle : allData.Title, 
             listPrice : allData.BuyNowPrice,
-            listPic   : allData.PictureHref};
+            listPic   : allData.PictureHref };
   })
 }
 
@@ -22,46 +22,58 @@ function App() {
 
     useEffect(async () => {
       const response = await fetch('/Sample-Api.json').then(response => response.json());
+      
       setSearchResults (siplifySampleData(response));
     }, [])
   
   return (
-    <div className="App">
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/EarnMoney">Earn Money</Link>
-              </li>
-              <li>
-                <Link to="/goals">Goals</Link>
-              </li>
-              <li>
-                <Link to="/progress">Progress</Link>
-              </li>
-            </ul>
-          </nav>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/EarnMoney">
-              <EarnMoney />
-            </Route>
-            <Route path="/goals">
-              <Goals />
-            </Route>
-            <Route path="/progress">
-              <Progress />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </div>
+    // <div className="App">
+    //   <Router>
+    //     <div>
+
+
+    //       <nav>
+    //         <ul>
+    //           <li>
+    //             <Link to="/">Home</Link>
+    //           </li>
+    //           <li>
+    //             <Link to="/EarnMoney">Earn Money</Link>
+    //           </li>
+    //           <li>
+    //             <Link to="/goals">Goals</Link>
+    //           </li>
+    //           <li>
+    //             <Link to="/progress">Progress</Link>
+    //           </li>
+    //         </ul>
+    //       </nav>
+    //       <Switch>
+    //         <Route exact path="/">
+    //           <Home />
+    //         </Route>
+    //         <Route path="/EarnMoney">
+    //           <EarnMoney />
+    //         </Route>
+    //         <Route path="/goals">
+    //           <Goals />
+    //         </Route>
+    //         <Route path="/progress">
+    //           <Progress />
+    //         </Route>
+    //       </Switch>
+    //     </div>
+    //   </Router>
+    //   {searchResults.map((searchResult) => 
+    //   (<div> 
+    //     <img src={searchResult.listPic}/>
+    //    <p> {searchResult.listTitle}</p>
+    //    <p>
+    //     ${searchResult.listPrice}</p>
+    //     </div>))}
+    // </div>
+    <Home>
+    </Home>
   );
 }
 
