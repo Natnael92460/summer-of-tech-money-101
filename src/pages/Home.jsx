@@ -53,7 +53,7 @@ export const Home = () => {
       templateColumns="repeat(2, 1fr)"
       gap={4}
     >
-      <GridItem style={{marginLeft:"30px" , marginDown:"40px"}} bg="white">
+      <GridItem style={{marginLeft:"30px" , marginDown:"40px",paddingDown:"40px",borderBottom:"1px solid"}} bg="white">
       <h1 style={{textAlign:"center",color:"#60BB77"}}>Ways to earn</h1>
       <Grid templateColumns="repeat(3, 1fr)">
         {chores.map((chore) => (
@@ -70,7 +70,7 @@ export const Home = () => {
         
 
 
-      <GridItem rowSpan={2} style={{ overflow: "scroll" , marginLeft:"20px",marginDown:"40px" }} bg="white">
+      <GridItem rowSpan={2} style={{ overflow: "scroll" , marginLeft:"20px",paddingLeft:"50px",marginDown:"40px",borderLeft:"1px solid"}} bg="white">
       <h1 style={{textAlign:"center",color:"#60BB77"}}>Choose a Savings Goal</h1>
         <Grid templateColumns="repeat(2, 1fr)">
           {searchResults.map((searchResult) => (
@@ -83,7 +83,7 @@ export const Home = () => {
         </Grid> 
       </GridItem> 
 
-      <GridItem bg="white">
+      <GridItem bg="white"  >
         <h1 style={{textAlign:"center",color:"#60BB77"}}>My Progress</h1>
       <Grid
       h="60vh"
